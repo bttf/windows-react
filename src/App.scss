@@ -1,0 +1,22 @@
+.application {
+  display: flex;
+  height: 100%;
+
+
+  .stage {
+    flex: 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .control-panel {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

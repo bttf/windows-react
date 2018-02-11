@@ -1,0 +1,68 @@
+.windows {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  .window {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 400px;
+    min-width: 400px;
+
+    border: 1px solid #ccc;
+    font-size: 4rem;
+
+    transition: all .5s;
+
+    &.window-0 {
+      opacity: 0;
+      transform: translateX(-66%) scale(2, 2);
+    }
+
+    &.window-1 {
+      transform: translateX(-33%) scale(1.5, 1.5);
+    }
+
+    &.window-2 {
+    }
+
+    &.window-3 {
+      transform: translateX(33%) scale(.667, .667);
+    }
+
+    &.window-4 {
+      opacity: .5;
+      transform: translateX(66%) scale(0.445, 0.445);
+    }
+
+    &.window-5 {
+      opacity: 0;
+      transform: translateX(99%) scale(0.2248, 0.2248);
+    }
+  }
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  box-sizing: border-box;
+  padding: 2rem 4rem;
+
+  .left,
+  .right {
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+  }
+}
