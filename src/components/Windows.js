@@ -4,6 +4,7 @@ import './Windows.scss';
 
 export default class Windows extends Component {
   state = {
+    isMoving: false,
     windows: [{
       index: 25,
       placement: 0,
@@ -34,6 +35,7 @@ export default class Windows extends Component {
   }
 
   moveLeft() {
+    if (this.state.isMoving) return;
     const newWindows = this.state.windows.map(win => {
       let newIndex = win.index;
       let newPlacement = (win.placement + 1) % this.state.windows.length;
@@ -53,10 +55,12 @@ export default class Windows extends Component {
       };
     });
 
-    this.setState({ windows: newWindows });
+    this.setState({ windows: newWindows, isMoving: true });
+    setTimeout(() => this.setState({ isMoving: false }), 500);
   }
 
   moveRight() {
+    if (this.state.isMoving) return;
     const newWindows = this.state.windows.map(win => {
       let newIndex = win.index;
       let newPlacement = (win.placement - 1);
@@ -76,7 +80,8 @@ export default class Windows extends Component {
         placement: newPlacement,
       };
     });
-    this.setState({ windows: newWindows });
+    this.setState({ windows: newWindows, isMoving: true });
+    setTimeout(() => this.setState({ isMoving: false }), 500);
   }
 
   render() {
@@ -84,7 +89,7 @@ export default class Windows extends Component {
       <div className="windows">
         {this.state.windows.map((win, index) => (
           <Window key={index} index={win.placement}>
-            {this.state.content[win.index]}
+            <img src={`/photo-${index}.gif`} />
           </Window>
         ))}
       </div>

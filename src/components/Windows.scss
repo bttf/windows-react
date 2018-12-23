@@ -17,7 +17,10 @@
     min-height: 400px;
     min-width: 400px;
 
+    width: 400px;
+
     border: 1px solid #ccc;
+    border-radius: 20px;
     font-size: 4rem;
 
     transition: all .5s;
@@ -64,5 +67,6 @@
     cursor: pointer;
     width: 1rem;
     height: 1rem;
+    z-index: 9;
   }
 }
